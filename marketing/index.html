@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Farzi Belasi: bilingual marketing strategist in Ottawa. Paid social, email, content, and campaign reporting." />
+<link rel="icon" href="data:," />
+<title>Farzi Belasi · Digital Marketing, Campaigns and Content</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#FAF6EE;
+    --bg-soft:#F3ECDD;
+    --surface:#FFFFFF;
+    --surface-soft:#FFFCF6;
+    --ink:#2A2A24;
+    --ink-soft:#5C5A4E;
+    --ink-faint:#8A8776;
+    --olive:#42552F;
+    --olive-deep:#334226;
+    --olive-soft:#E7EBD9;
+    --gold:#B9976B;
+    --gold-soft:#EFE3CF;
+    --line:#E3DCC8;
+    --line-strong:#CFC4A6;
+    --chip-bg:#FFFFFF;
+    --shadow:0 18px 44px rgba(66,58,32,.10);
+    --shadow-sm:0 8px 22px rgba(66,58,32,.08);
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#171913;
+      --bg-soft:#1E211A;
+      --surface:#22251E;
+      --surface-soft:#26291F;
+      --ink:#F1EDE0;
+      --ink-soft:#C9C4B0;
+      --ink-faint:#9B9784;
+      --olive:#A8BC8A;
+      --olive-deep:#C2D3A6;
+      --olive-soft:#2C3324;
+      --gold:#C9A97E;
+      --gold-soft:#333022;
+      --line:#333629;
+      --line-strong:#4A4E3C;
+      --chip-bg:#26291F;
+      --shadow:0 18px 44px rgba(0,0,0,.38);
+      --shadow-sm:0 8px 22px rgba(0,0,0,.3);
+      color-scheme:dark;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;
+    font-size:16.5px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
+  .serif{font-family:"Cormorant Garamond",Georgia,serif}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:56px 0 64px;
+    background:
+      radial-gradient(720px 420px at 88% -60px, var(--gold-soft) 0%, transparent 62%),
+      linear-gradient(180deg,var(--bg-soft) 0%,var(--bg) 88%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.12fr .88fr;
+    gap:56px;
+    align-items:center;
+  }
+  .location{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--olive);
+  }
+  .location::before{content:"";width:26px;height:1px;background:var(--gold);display:inline-block}
+  h1{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-weight:600;
+    font-size:clamp(52px,7vw,78px);
+    line-height:.98;
+    letter-spacing:-.01em;
+    margin:16px 0 6px;
+  }
+  .headline{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-style:italic;font-weight:500;
+    font-size:clamp(25px,3.4vw,34px);
+    line-height:1.25;
+    color:var(--olive);
+    margin:0 0 20px;
+    max-width:22ch;
+  }
+  .subline{
+    font-size:17.5px;line-height:1.7;color:var(--ink-soft);
+    max-width:52ch;margin:0 0 30px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 22px;border-radius:999px;
+    font-size:14.5px;font-weight:800;letter-spacing:.01em;
+    text-decoration:none;border:1px solid transparent;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--olive);color:#FBF8EF;border-color:var(--olive)}
+  .btn-primary:hover{background:var(--olive-deep)}
+  @media (prefers-color-scheme: dark){ .btn-primary{color:#171913} .btn-primary:hover{color:#171913} }
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--olive);color:var(--olive)}
+  .btn svg{width:16px;height:16px;flex:none}
+  .hero-meta{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 18px;
+    font-size:13.5px;color:var(--ink-faint);font-weight:600;
+  }
+  .hero-meta span{display:inline-flex;align-items:center;gap:8px}
+  .hero-meta span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
+  .hero-meta span:first-child::before{display:none}
+
+  .portrait-frame{position:relative;max-width:420px;margin-left:auto;width:100%}
+  .portrait-frame::before{
+    content:"";position:absolute;inset:18px -16px -16px 18px;
+    border:1px solid var(--gold);border-radius:220px 220px 14px 14px;opacity:.65;
+  }
+  .portrait{
+    position:relative;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;
+    border-radius:220px 220px 14px 14px;
+    box-shadow:var(--shadow);
+    background:var(--bg-soft);
+  }
+  .portrait-caption{
+    position:relative;margin-top:22px;text-align:center;
+    font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--ink-faint);
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:68px 0}
+  .section-head{max-width:640px;margin-bottom:34px}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .kicker{
+    font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+    display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  }
+  .section-head.center .kicker{justify-content:center}
+  .kicker::after{content:"";width:30px;height:1px;background:var(--gold)}
+  .section-head.center .kicker::before{content:"";width:30px;height:1px;background:var(--gold)}
+  h2{
+    font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;
+    font-size:clamp(34px,4.4vw,46px);line-height:1.08;margin:0 0 12px;letter-spacing:-.01em;
+  }
+  .section-lede{color:var(--ink-soft);font-size:16.5px;margin:0;max-width:56ch}
+  .section-head.center .section-lede{margin-left:auto;margin-right:auto}
+
+  /* About */
+  .about{background:var(--surface-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-inner{max-width:760px;margin:0 auto;text-align:center}
+  .about-inner p{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:clamp(21px,2.7vw,26px);line-height:1.55;font-weight:500;color:var(--ink);
+    margin:0;
+  }
+  .about-inner p + p{margin-top:18px}
+  .about-mark{font-size:26px;color:var(--gold);line-height:1;margin-bottom:16px}
+
+  /* ---------- WORK ---------- */
+  .work-list{display:flex;flex-direction:column;gap:26px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:18px;
+    overflow:hidden;box-shadow:var(--shadow-sm);
+    display:grid;grid-template-columns:1fr 1fr;
+  }
+  .card.reverse .card-media{order:2}
+  .card.reverse .card-body{order:1}
+  .card-media{background:var(--bg-soft);position:relative;min-height:320px}
+  .card-media img.main{
+    width:100%;height:100%;position:absolute;inset:0;object-fit:cover;
+  }
+  .card-media img.main.contain{object-fit:cover;object-position:center top}
+  .thumbs{
+    position:absolute;left:14px;bottom:14px;display:flex;gap:8px;z-index:2;
+  }
+  .thumbs button{
+    width:52px;height:64px;padding:0;border-radius:9px;overflow:hidden;cursor:pointer;
+    border:2px solid rgba(255,255,255,.85);background:#fff;box-shadow:0 6px 16px rgba(0,0,0,.22);
+    transition:transform .15s ease, border-color .15s ease;
+  }
+  .thumbs button:hover{transform:translateY(-2px)}
+  .thumbs button[aria-pressed="true"]{border-color:var(--gold)}
+  .thumbs button img{width:100%;height:100%;object-fit:cover}
+  .format-tag{
+    position:absolute;top:14px;left:14px;z-index:2;
+    background:rgba(23,22,16,.72);color:#FBF7EA;backdrop-filter:blur(6px);
+    font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    padding:7px 11px;border-radius:999px;
+  }
+  .card-body{padding:34px 34px 30px;display:flex;flex-direction:column;align-items:flex-start}
+  .card-eyebrow{
+    font-size:11.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+  }
+  .card-body h3{
+    font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;
+    font-size:clamp(27px,3vw,33px);line-height:1.12;margin:0 0 6px;
+  }
+  .card-sub{font-size:14px;font-weight:700;color:var(--olive);margin:0 0 14px}
+  .card-body p.desc{color:var(--ink-soft);font-size:15.5px;line-height:1.68;margin:0 0 20px}
+  .role-list{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-wrap:wrap;gap:7px}
+  .role-list li{
+    font-size:12.5px;font-weight:700;color:var(--ink-soft);
+    border:1px solid var(--line);background:var(--surface-soft);
+    padding:6px 11px;border-radius:999px;
+  }
+  .card-actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px}
+  .watch-btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    background:var(--ink);color:var(--bg);font-size:13.5px;font-weight:800;
+    padding:11px 18px;border-radius:999px;transition:opacity .15s ease, transform .15s ease;
+  }
+  .watch-btn:hover{opacity:.88}
+  .watch-btn:active{transform:scale(.98)}
+  .watch-btn .play{
+    width:20px;height:20px;border-radius:50%;background:var(--gold);color:#231F14;
+    display:inline-flex;align-items:center;justify-content:center;flex:none;
+  }
+  .watch-btn .play svg{width:9px;height:9px;margin-left:1px}
+  .watch-btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line-strong)}
+  .watch-btn.secondary .play{background:var(--olive-soft);color:var(--olive)}
+  .no-link-note{font-size:13px;color:var(--ink-faint);font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:11px 2px}
+  .no-link-note::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+  /* In-page video players and clearly separated photo blocks */
+  .card-media.media-stack{
+    display:flex;flex-direction:column;justify-content:center;gap:16px;
+    padding:20px;min-height:0;
+  }
+  .video-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .media-block{margin:0;display:flex;flex-direction:column;gap:9px;min-width:0}
+  .media-block video{
+    width:100%;aspect-ratio:9/16;object-fit:cover;display:block;
+    border-radius:12px;background:#14130E;box-shadow:var(--shadow-sm);
+  }
+  .media-block video.solo{width:auto;max-width:100%;max-height:520px;margin:0 auto}
+  .media-block figcaption{font-size:13px;font-weight:700;color:var(--ink-soft);line-height:1.45}
+  .media-block figcaption .ep{color:var(--gold);font-weight:800}
+  .media-label{
+    font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  }
+  .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .photo-pair img{width:100%;height:170px;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-sm)}
+  .prov-link{font-size:12.5px;font-weight:600;color:var(--ink-faint);margin:0}
+  .prov-link a{color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px}
+  .prov-link a:hover{color:var(--olive)}
+
+  /* Second row: two smaller cards */
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .work-grid .card{grid-template-columns:1fr;grid-template-rows:260px 1fr}
+  .work-grid .card-media{min-height:0;height:260px}
+  .work-grid .card-body{padding:26px 26px 24px}
+
+  /* ---------- SKILLS ---------- */
+  .skills{background:var(--olive);color:#F3EFE1;border-radius:0}
+  @media (prefers-color-scheme: dark){ .skills{background:#20261A} }
+  .skills h2{color:#FBF8EC}
+  .skills .kicker{color:var(--gold)}
+  .skills .section-lede{color:#D8D2BC}
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px 56px}
+  .skills-col h3{
+    font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 16px;display:flex;align-items:center;gap:10px;
+  }
+  .skills-col h3::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.18)}
+  .chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:9px}
+  .chips li{
+    font-size:14px;font-weight:700;padding:9px 15px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.06);color:#FBF8EC;
+  }
+  .chips.tools li{background:#FBF8EC;color:#334226;border-color:#FBF8EC}
+  @media (prefers-color-scheme: dark){ .chips.tools li{background:#EDE8D6;color:#2A331F;border-color:#EDE8D6} }
+
+  /* ---------- BACKGROUND STRIP ---------- */
+  .background-strip{padding:34px 0 0}
+  .strip{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:20px 6px;text-align:center;
+    font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--ink-faint);line-height:2;
+  }
+  .strip b{color:var(--ink-soft);font-weight:700}
+  .strip .sep{color:var(--gold);margin:0 10px;font-weight:400}
+
+  /* ---------- CONTACT ---------- */
+  .contact{padding:72px 0 30px;text-align:center}
+  .contact h2{font-size:clamp(38px,5vw,54px);max-width:16ch;margin-left:auto;margin-right:auto}
+  .contact p{color:var(--ink-soft);max-width:48ch;margin:0 auto 28px}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:38px}
+  .contact-lines{
+    display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;
+    font-size:14.5px;font-weight:700;color:var(--ink-soft);
+    border-top:1px solid var(--line);padding-top:26px;
+  }
+  .contact-lines a{text-decoration:none;border-bottom:1px solid var(--gold)}
+  .contact-lines a:hover{color:var(--olive)}
+  footer{padding:18px 0 34px;text-align:center;font-size:12.5px;color:var(--ink-faint)}
+
+  /* All content is visible by default, with no entrance animation: the page
+     reads identically in a live view, a full-page capture, and print. */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .btn,.watch-btn,.thumbs button{transition:none}
+  }
+
+  @media (max-width:860px){
+    .hero{padding:38px 0 48px}
+    .hero-grid{grid-template-columns:1fr;gap:38px}
+    .portrait-frame{margin:0 auto;max-width:340px}
+    .portrait-frame::before{inset:12px -10px -10px 12px}
+    .headline{max-width:none}
+    .card,.work-grid .card{grid-template-columns:1fr}
+    .card.reverse .card-media{order:0}
+    .card.reverse .card-body{order:1}
+    .card-media{min-height:0;height:340px;position:relative}
+    .card-media.media-stack{height:auto}
+    .photo-pair img{height:130px}
+    .work-grid{grid-template-columns:1fr}
+    .work-grid .card{grid-template-rows:280px 1fr}
+    .card-body{padding:26px 22px 24px}
+    section{padding:52px 0}
+    .skills-grid{grid-template-columns:1fr;gap:30px}
+    .hero-actions .btn{flex:1;justify-content:center}
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="location">Ottawa, ON</span>
+        <h1>Farzi Belasi</h1>
+        <p class="headline">Digital Marketing, Campaigns and Content</p>
+        <p class="subline">Bilingual marketing strategist in Ottawa. I plan and run paid social, email, and content campaigns, and I report on them in a way that shows what worked, why, and what to do next.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:farzibelasi@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            Email me
+          </a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/farzi-belasi" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn btn-ghost" href="../">Creative portfolio</a>
+        </div>
+        <div class="hero-meta">
+          <span>Paid social strategy</span>
+          <span>Email and lifecycle</span>
+          <span>Content and community</span>
+          <span>English and French</span>
+        </div>
+      </div>
+      <div class="portrait-frame">
+        <img class="portrait" src="../assets/headshot.jpg" alt="Portrait of Farzi Belasi" />
+        <div class="portrait-caption">Marketing Strategist · Ottawa</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="wrap">
+      <div class="about-inner reveal">
+        <div class="about-mark" aria-hidden="true">✦</div>
+        <p>I am the marketing strategist at MYA Media, a small Ottawa agency, where I lead paid social strategy and reporting for local clients. Before that, at Accenture, I advised a portfolio of 100 business clients on their paid social advertising.</p>
+        <p>My background started in words: an MA in Translation Studies, and years writing email campaigns, newsletters, and product copy for an ecommerce brand. It is why my campaigns and my content share one standard: clear, honest, and written for the person reading.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Selected Work</div>
+        <h2>Campaigns, content, and community</h2>
+        <p class="section-lede">A selection across campaign performance, educational video, static social, writing, and brand content.</p>
+      </div>
+
+      <div class="work-list">
+
+        <!-- 1. Campaign analysis -->
+        <article class="card reveal">
+          <div class="card-media media-stack">
+            <div>
+              <div class="serif" style="font-size:44px;font-weight:600;color:var(--olive);line-height:1.1">219 leads</div>
+              <div style="font-size:15px;color:var(--ink-soft);font-weight:600">at $8.77 cost per lead, down from $10.79 in the opening phase</div>
+            </div>
+            <p class="prov-link">Full one-page analysis, with the rebuild and the results, in the PDF.</p>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">MYA Media · Meta Ads</div>
+            <h3>Campaign Analysis: Lead Generation</h3>
+            <p class="card-sub">Home-services client, Ottawa · August to October 2026</p>
+            <p class="desc">When the client changed direction mid-campaign and decided to focus on one service instead of two, I rebuilt the campaign structure, budget, and reporting around the new priority, without pausing lead flow.</p>
+            <ul class="role-list">
+              <li>Strategy</li><li>Campaign structure</li><li>Budget reallocation</li><li>Reporting and analysis</li>
+            </ul>
+            <div class="card-actions">
+              <a class="watch-btn" href="../assets/Farzi_Belasi_WorkSample_Campaign_Analysis.pdf" target="_blank" rel="noopener">
+                <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                Read the analysis (PDF)
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. MYA Educational Reel Series -->
+        <article class="card reverse reveal">
+          <div class="card-media media-stack">
+            <div class="video-pair">
+              <figure class="media-block">
+                <video controls preload="none" playsinline poster="../assets/mya_clicks_poster.jpg" aria-label="MYA Media educational reel, episode 1: Meta Ads getting clicks but no leads">
+                  <source src="../assets/mya_clicks_no_leads.mp4" type="video/mp4" />
+                </video>
+                <figcaption><span class="ep">Episode 1</span> · Meta Ads Getting Clicks But No Leads?</figcaption>
+              </figure>
+              <figure class="media-block">
+                <video controls preload="none" playsinline poster="../assets/mya_boosting_poster.jpg" aria-label="MYA Media educational reel, episode 2: Boosting posts versus Ads Manager">
+                  <source src="../assets/mya_boosting_posts.mp4" type="video/mp4" />
+                </video>
+                <figcaption><span class="ep">Episode 2</span> · Boosting Posts vs. Ads Manager</figcaption>
+              </figure>
+            </div>
+            <p class="prov-link">Posted on Instagram <a href="https://www.instagram.com/myamedia.creative" target="_blank" rel="noopener">@myamedia.creative</a></p>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">MYA Media</div>
+            <h3>Educational Reel Series</h3>
+            <p class="card-sub">Content series · @myamedia.creative</p>
+            <p class="desc">I lead MYA Media's educational content: concept, scripts, on-camera delivery, filming, captions, and editing for a short-form series that turns paid social topics into clear, practical tips.</p>
+            <ul class="role-list">
+              <li>Concept</li><li>Script</li><li>On-camera delivery</li><li>Filming</li><li>Captions</li><li>Editing</li>
+            </ul>
+            <div class="card-actions">
+              <span class="no-link-note">Press play to watch both episodes here</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. MYA Carousel Posts -->
+        <article class="card reveal">
+          <div class="card-media" data-gallery>
+            <span class="format-tag">Carousel</span>
+            <img class="main contain" data-main src="../assets/mya_1.jpg" alt="Cover slide from a MYA Media carousel post" width="1320" height="1508" loading="lazy" />
+            <div class="thumbs" role="group" aria-label="Slides from this carousel series">
+              <button type="button" aria-label="Show: Cover slide from a MYA Media carousel post" data-src="../assets/mya_1.jpg" data-alt="Cover slide from a MYA Media carousel post" aria-pressed="true"><img src="../assets/mya_1.jpg" alt="" /></button>
+              <button type="button" aria-label="Show: Carousel slide about answering client questions" data-src="../assets/mya_2.jpg" data-alt="Carousel slide about answering client questions" aria-pressed="false"><img src="../assets/mya_2.jpg" alt="" /></button>
+              <button type="button" aria-label="Show: Carousel slide about showing proof" data-src="../assets/mya_3.jpg" data-alt="Carousel slide about showing proof" aria-pressed="false"><img src="../assets/mya_3.jpg" alt="" /></button>
+              <button type="button" aria-label="Show: Carousel slide about content that attracts qualified leads" data-src="../assets/mya_4.jpg" data-alt="Carousel slide about content that attracts qualified leads" aria-pressed="false"><img src="../assets/mya_4.jpg" alt="" /></button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">MYA Media</div>
+            <h3>Carousel Posts</h3>
+            <p class="card-sub">Static social and ad-style content</p>
+            <p class="desc">Carousel concept, copywriting, and visual editing for static social and ad-style content.</p>
+            <ul class="role-list">
+              <li>Concept</li><li>Copywriting</li><li>Visual editing</li>
+            </ul>
+            <div class="card-actions">
+              <a class="watch-btn secondary" href="https://www.instagram.com/myamedia.creative" target="_blank" rel="noopener">
+                <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                View on Instagram
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Writing, email and newsletters -->
+        <article class="card reverse reveal">
+          <div class="card-media media-stack">
+            <figure class="media-block">
+              <span class="media-label">Email and Newsletters · Koodakoo</span>
+              <figcaption>Campaign emails, newsletters, and product copy for an ecommerce brand, with Mailchimp automations for welcome and abandoned cart, and a list grown from about 7,000 to over 11,000 subscribers.</figcaption>
+            </figure>
+            <figure class="media-block">
+              <span class="media-label">Community Writing · Ottawa Is Not Boring</span>
+              <figcaption>Volunteer writer for a weekly Ottawa newsletter, writing short pieces that help local readers decide how to spend their weekends.</figcaption>
+            </figure>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">Koodakoo · Ottawa Is Not Boring</div>
+            <h3>Writing, Email and Newsletters</h3>
+            <p class="card-sub">Campaign copy, automations, community writing</p>
+            <p class="desc">Writing is where my marketing started. I wrote every email campaign and newsletter at Koodakoo, built the automations behind them, and segmented sends by audience. I still write weekly, for a local newsletter read across Ottawa.</p>
+            <ul class="role-list">
+              <li>Email campaigns</li><li>Newsletters</li><li>Automations</li><li>Segmentation</li><li>Community writing</li>
+            </ul>
+            <div class="card-actions">
+              <span class="no-link-note">Writing samples available on request</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Breitling Pick Your Vibe -->
+        <article class="card reveal">
+          <div class="card-media media-stack">
+            <figure class="media-block">
+              <span class="media-label">Reel</span>
+              <video class="solo" controls preload="none" playsinline poster="../assets/breitling_poster.jpg" aria-label="Breitling Pick Your Vibe product reel">
+                <source src="../assets/breitling_pick_your_vibe.mp4" type="video/mp4" />
+              </video>
+              <figcaption class="prov-link">Posted on Instagram <a href="https://www.instagram.com/reel/DTsyhcIER4E/" target="_blank" rel="noopener">@breitling_ottawasquad</a></figcaption>
+            </figure>
+            <figure class="media-block">
+              <span class="media-label">Product Photography</span>
+              <div class="photo-pair">
+                <img src="../assets/breitling_1.jpg" alt="Breitling Navitimer watch photographed in a holiday boutique setting" width="1320" height="1738" loading="lazy" />
+                <img src="../assets/breitling_2.jpg" alt="Breitling Superocean watch photographed with a vintage van in the background" width="1320" height="1738" loading="lazy" />
+              </div>
+            </figure>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">Breitling Boutique · Ottawa</div>
+            <h3>Pick Your Vibe</h3>
+            <p class="card-sub">Brand content for a premium retail boutique</p>
+            <p class="desc">Concept, styling, product photography, filming, and editing for a premium retail product showcase, created as part of the boutique's social media content.</p>
+            <ul class="role-list">
+              <li>Concept</li><li>Styling</li><li>Product photography</li><li>Filming</li><li>Editing</li>
+            </ul>
+            <div class="card-actions">
+              <span class="no-link-note">Press play to watch the reel here</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Skills and Tools</div>
+        <h2>What I bring to a campaign</h2>
+        <p class="section-lede">Strategy, hands-on execution, and reporting that closes the loop.</p>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skills-col">
+          <h3>Skills</h3>
+          <ul class="chips">
+            <li>Paid Social Strategy</li>
+            <li>Campaign Reporting and Analytics</li>
+            <li>Email Marketing and Lifecycle</li>
+            <li>Content Strategy</li>
+            <li>SEO Content</li>
+            <li>Copywriting in English and French</li>
+            <li>Short-Form Video</li>
+            <li>Creative Briefs</li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <h3>Tools</h3>
+          <ul class="chips tools">
+            <li>Meta Ads Manager</li>
+            <li>Mailchimp</li>
+            <li>MailerLite</li>
+            <li>WordPress</li>
+            <li>Google Analytics</li>
+            <li>Canva</li>
+            <li>Adobe Photoshop</li>
+            <li>CapCut</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKGROUND STRIP -->
+  <div class="background-strip">
+    <div class="wrap">
+      <p class="strip">
+        Marketing Strategist, <b>MYA Media</b><span class="sep">|</span>Marketing Specialist (Meta Project), <b>Accenture</b><span class="sep">|</span>Digital Marketing Coordinator, <b>Koodakoo</b><span class="sep">|</span>MA in Translation Studies, <b>University of Ottawa</b>
+      </p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="wrap">
+      <div class="kicker" style="justify-content:center;display:flex">Contact</div>
+      <h2 class="serif">Let's build campaigns that perform.</h2>
+      <p>Open to marketing roles and projects in Ottawa and across Canada.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:farzibelasi@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          farzibelasi@gmail.com
+        </a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/farzi-belasi" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+      <div class="contact-lines">
+        <span>Ottawa, ON</span>
+        <a href="mailto:farzibelasi@gmail.com">farzibelasi@gmail.com</a>
+        <a href="tel:+13437774069">(343) 777-4069</a>
+        <a href="https://linkedin.com/in/farzi-belasi" target="_blank" rel="noopener">linkedin.com/in/farzi-belasi</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">Farzi Belasi · Digital Marketing, Campaigns and Content · Ottawa, ON</div>
+  </footer>
+
+
+<script>
+  // Thumbnail galleries: tap a thumbnail to swap the main image in that card.
+  document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
+    var main = gallery.querySelector('[data-main]');
+    var buttons = gallery.querySelectorAll('.thumbs button');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var src = btn.getAttribute('data-src');
+        var alt = btn.getAttribute('data-alt');
+        if (src) main.src = src;
+        if (alt) main.alt = alt;
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+      });
+    });
+  });
+
+
+</script>
+</body>
+</html>
