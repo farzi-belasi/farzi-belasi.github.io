@@ -191,7 +191,7 @@
   .card-media img.main{
     width:100%;height:100%;position:absolute;inset:0;object-fit:cover;
   }
-  .card-media img.main.contain{object-fit:cover;object-position:center top}
+  .card-media img.main.contain{object-fit:contain;object-position:center center;background:var(--bg-soft);cursor:zoom-in}
   .thumbs{
     position:absolute;left:14px;bottom:14px;display:flex;gap:8px;z-index:2;
   }
@@ -342,6 +342,18 @@
     .skills-grid{grid-template-columns:1fr;gap:30px}
     .hero-actions .btn{flex:1;justify-content:center}
   }
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{position:fixed;inset:0;z-index:80;background:rgba(18,17,12,.93);display:none;align-items:center;justify-content:center;padding:26px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:min(94vw,720px);max-height:86vh;object-fit:contain;background:#fff;border-radius:10px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .lb-btn{position:absolute;border:1px solid rgba(251,247,234,.35);background:rgba(23,22,16,.55);color:#FBF7EA;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:999px;font-family:Manrope,sans-serif;z-index:2}
+  .lb-close{top:18px;right:18px;width:42px;height:42px;font-size:24px;line-height:1}
+  .lb-prev,.lb-next{top:50%;transform:translateY(-50%);width:46px;height:46px;font-size:26px}
+  .lb-prev{left:16px}.lb-next{right:16px}
+  .lb-btn:hover{background:rgba(23,22,16,.85)}
+  .lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#FBF7EA;font-size:13px;font-weight:700;letter-spacing:.06em}
+  .photo-pair img{cursor:zoom-in}
 </style>
 </head>
 <body>
@@ -589,6 +601,15 @@
     <div class="wrap">Farzi Belasi · Performance Creative and Short-Form Content · Ottawa, ON</div>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size image viewer">
+    <button type="button" class="lb-btn lb-close" id="lb-close" aria-label="Close viewer">&times;</button>
+    <button type="button" class="lb-btn lb-prev" id="lb-prev" aria-label="Previous image">&#8249;</button>
+    <img id="lb-img" src="" alt="" />
+    <button type="button" class="lb-btn lb-next" id="lb-next" aria-label="Next image">&#8250;</button>
+    <div class="lb-count" id="lb-count"></div>
+  </div>
+
 <script>
   // Thumbnail galleries: tap a thumbnail to swap the main image in that card.
   document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
@@ -607,6 +628,60 @@
   });
 
 
+
+  // Lightbox: click a gallery main image or a photo-pair image to view it
+  // full-screen. Images are always shown whole (object-fit: contain).
+  (function () {
+    var lb = document.getElementById('lightbox');
+    if (!lb) return;
+    var lbImg = document.getElementById('lb-img');
+    var lbCount = document.getElementById('lb-count');
+    var prevBtn = document.getElementById('lb-prev');
+    var nextBtn = document.getElementById('lb-next');
+    var group = [], idx = 0;
+    function render() {
+      if (!group.length) return;
+      lbImg.src = group[idx].src; lbImg.alt = group[idx].alt || '';
+      lbCount.textContent = (idx + 1) + ' / ' + group.length;
+      prevBtn.style.display = group.length > 1 ? '' : 'none';
+      nextBtn.style.display = group.length > 1 ? '' : 'none';
+    }
+    function open(items, start) { group = items; idx = start || 0; render(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function close() { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; }
+    function step(d) { if (group.length) { idx = (idx + d + group.length) % group.length; render(); } }
+    document.getElementById('lb-close').addEventListener('click', close);
+    prevBtn.addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+    nextBtn.addEventListener('click', function (e) { e.stopPropagation(); step(1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
+    });
+    document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
+      var main = gallery.querySelector('[data-main]');
+      if (!main) return;
+      main.addEventListener('click', function () {
+        var items = [], start = 0;
+        gallery.querySelectorAll('.thumbs button').forEach(function (b, i) {
+          items.push({ src: b.getAttribute('data-src'), alt: b.getAttribute('data-alt') || '' });
+          if (b.getAttribute('aria-pressed') === 'true') start = i;
+        });
+        if (!items.length) items.push({ src: main.getAttribute('src'), alt: main.alt || '' });
+        open(items, start);
+      });
+    });
+    document.querySelectorAll('.photo-pair').forEach(function (pair) {
+      var imgs = pair.querySelectorAll('img');
+      imgs.forEach(function (im, i) {
+        im.addEventListener('click', function () {
+          var items = []; imgs.forEach(function (x) { items.push({ src: x.getAttribute('src'), alt: x.alt || '' }); });
+          open(items, i);
+        });
+      });
+    });
+  })();
 </script>
 </body>
 </html>
